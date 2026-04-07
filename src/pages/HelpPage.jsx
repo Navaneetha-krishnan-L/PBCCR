@@ -1,54 +1,17 @@
-import { useState } from 'react'
+import{useState}from 'react'
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
-const FAQS=[
-  {id:1,q:'What is PBCCR?',a:'PBCCR is a digital cancer registry that collects and analyzes cancer data for better healthcare planning.'},
-  {id:2,q:'Who can use this platform?',a:'Healthcare professionals, researchers, policymakers, and public health administrators can use this platform to access cancer statistics and insights.'},
-  {id:3,q:'Is the data reliable?',a:'Yes. All cancer cases recorded in PBCCR follow internationally accepted medical classification standards. Only confirmed cases are included to ensure data reliability and consistency.'},
-]
-const CARDS=[
-  {text:'Navigate through the menu to explore different sections like Data, Dashboard, and Methods.'},
-  {text:'Use the search bar to quickly find specific cancer data or reports.'},
-  {text:'Click on profile to access your details.'},
-  {text:'Visit the Methods section to understand how the data is collected and analyzed.'},
-]
+const FAQS=[{id:1,q:'What is PBCCR?',a:'PBCCR is a digital cancer registry that collects and analyzes cancer data for better healthcare planning.'},{id:2,q:'Who can use this platform?',a:'Healthcare professionals, researchers, policymakers, and public health administrators can use this platform to access cancer statistics and insights.'},{id:3,q:'Is the data reliable?',a:'Yes. All cancer cases in PBCCR follow internationally accepted medical classification standards. Only confirmed cases are included to ensure data reliability.'}]
+const CARDS=[{t:'Navigate through the menu to explore different sections like Data, Dashboard, and Methods.'},{t:'Use the search bar to quickly find specific cancer data or reports.'},{t:'Click on profile to access your details.'},{t:'Visit the Methods section to understand how the data is collected and analyzed.'}]
 export default function HelpPage(){
-  const [faq,setFaq]=useState(1)
-  return(
-    <>
-      <Navbar />
-      <section className="help-hero">
-        <div className="help-hero-img"><img src="https://api.builder.io/api/v1/image/assets/TEMP/a52376c9452b61dfc531a2563a9ec98e9a69fce0?width=952" alt="Doctor" /></div>
-        <div className="help-hero-content">
-          <h1 className="help-hero-title">Help &amp; Support</h1>
-          <p className="help-hero-tagline">We're here to help you understand and use PBCCR effectively</p>
-          <p className="help-hero-desc">Welcome to the PBCCR Help Center. This platform is designed to provide cancer data insights and support awareness. If you have any questions about using the system, accessing data, or understanding reports, you can find guidance here.</p>
-        </div>
-      </section>
-      <div className="help-cards">
-        {CARDS.map((c,i)=>(
-          <div className="help-card" key={i}>
-            <div className="help-card-icon"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="9" stroke="#8805A4" strokeWidth="2"/><path d="M10 6v4M10 14h.01" stroke="#8805A4" strokeWidth="2" strokeLinecap="round"/></svg></div>
-            <p className="help-card-text">{c.text}</p>
-          </div>
-        ))}
-      </div>
-      <section className="faq-section">
-        <h2 className="faq-title">Frequently Asked Questions</h2>
-        <p className="faq-sub">Find quick answers to common inquiries about our platform</p>
-        <div className="faq-list">
-          {FAQS.map(f=>(
-            <div key={f.id} className={"faq-item"+(faq!==f.id?' closed':'')}>
-              <div className="faq-question" onClick={()=>setFaq(faq===f.id?null:f.id)}>
-                <span className="faq-question-text">{f.q}</span>
-                <svg width="9" height="6" viewBox="0 0 12 8" fill="none">{faq===f.id?<path d="M6 0L12 6L10.6 7.4L6 2.8L1.4 7.4L0 6L6 0Z" fill="#1C1B23"/>:<path d="M6 7.4L0 1.4L1.4 0L6 4.6L10.6 0L12 1.4L6 7.4Z" fill="#1C1B23"/>}</svg>
-              </div>
-              {faq===f.id&&<div className="faq-answer">{f.a}</div>}
-            </div>
-          ))}
-        </div>
-      </section>
-      <Footer />
-    </>
-  )
+const[faq,setFaq]=useState(1)
+return(
+<>
+<Navbar />
+<section className='pbr-help-hero'><div className='rounded-3 overflow-hidden flex-shrink-0 me-5' style={{width:'clamp(280px,35%,480px)',height:280}}><img src='https://api.builder.io/api/v1/image/assets/TEMP/a52376c9452b61dfc531a2563a9ec98e9a69fce0?width=952' alt='Doctor' className='w-100 h-100' style={{objectFit:'cover'}} /></div><div style={{maxWidth:580}}><h1 className='fw-bolder mb-2' style={{fontSize:'clamp(26px,3.5vw,40px)',letterSpacing:-1}}>Help & Support</h1><p style={{color:'#8805A4',marginBottom:12}}>We are here to help you understand and use PBCCR effectively</p><p className='text-secondary' style={{lineHeight:1.65}}>Welcome to the PBCCR Help Center. This platform is designed to provide cancer data insights and support awareness. If you have any questions about using the system, accessing data, or understanding reports, you can find guidance here.</p></div></section>
+<section className='py-5 px-5 bg-light'><div className='row g-4'>{CARDS.map((c,i)=>(<div className='col-md-3' key={i}><div className='card h-100 border-0 shadow-sm p-4'><div className='rounded-2 d-flex align-items-center justify-content-center mb-3' style={{width:48,height:48,background:'rgba(81,63,198,0.10)'}}><svg width='20' height='20' viewBox='0 0 20 20' fill='none'><circle cx='10' cy='10' r='9' stroke='#8805A4' strokeWidth='2'/><path d='M10 7v3M10 13h.01' stroke='#8805A4' strokeWidth='2' strokeLinecap='round'/></svg></div><p className='fw-semibold mb-0' style={{lineHeight:1.55}}>{c.t}</p></div></div>))}</div></section>
+<section className='pbr-faq-section'><h2 className='text-white text-center fw-bold mb-2'>Frequently Asked Questions</h2><p className='text-white text-center mb-5' style={{fontSize:18}}>Find quick answers to common inquiries about our platform</p><div className='d-flex flex-column gap-3' style={{maxWidth:1100,margin:'0 auto'}}>{FAQS.map(f=>(<div key={f.id} className='rounded-3 overflow-hidden' style={{background:faq===f.id?'#fff':'#F6F2FD'}}><div className='d-flex justify-content-between align-items-center p-3 cursor-pointer' style={{cursor:'pointer'}} onClick={()=>setFaq(faq===f.id?null:f.id)}><h5 className='fw-bold mb-0'>{f.q}</h5><svg width='12' height='8' viewBox='0 0 12 8' fill='none' style={{transform:faq===f.id?'rotate(180deg)':'none',transition:'transform 0.3s'}}><path d='M6 7.4L0 1.4L1.4 0L6 4.6L10.6 0L12 1.4L6 7.4Z' fill='#1C1B23'/></svg></div>{faq===f.id&&(<div className='px-3 pb-3 text-secondary' style={{borderTop:'1px solid rgba(200,196,214,0.15)'}}>{f.a}</div>)}</div>))}</div></section>
+<Footer />
+</>
+)
 }
