@@ -1,0 +1,104 @@
+/* === Help Page Styles === */
+
+.pbr-help-hero{
+  background:#F6F2FD;
+  padding:40px 80px;
+  display:flex;
+  align-items:center;
+  gap:48px;
+  flex-wrap:wrap;
+  min-height:260px;
+}
+
+.pbr-help-img{
+  width:clamp(240px,35%,440px);
+  height:280px;
+  border-radius:16px;
+  overflow:hidden;
+  flex-shrink:0;
+}
+
+.pbr-help-img img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
+
+.pbr-help-title{
+  font-size:clamp(24px,4vw,44px);
+  font-weight:800;
+  color:#8805A4;
+}
+
+.pbr-guide-card{
+  background:#fff;
+  border-radius:16px;
+  padding:28px;
+  box-shadow:0 2px 16px rgba(0,0,0,0.06);
+  height:100%;
+  border:none;
+}
+
+.pbr-guide-number{
+  width:48px;
+  height:48px;
+  border-radius:10px;
+  background:rgba(147,51,234,0.10);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:20px;
+  font-weight:800;
+  color:#9333EA;
+  margin-bottom:16px;
+}
+
+.pbr-faq-section{
+  background:linear-gradient(180deg,#9003D2 0%,#6E23AB 100%);
+  padding:64px 80px;
+}
+
+.pbr-faq-item{
+  background:#fff;
+  border-radius:14px;
+  overflow:hidden;
+  margin-bottom:14px;
+}
+
+.pbr-faq-btn{
+  width:100%;
+  padding:20px 24px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  border:none;
+  background:transparent;
+  font-size:15px;
+  font-weight:700;
+  text-align:left;
+  cursor:pointer;
+  transition:color 0.2s;
+}
+
+.pbr-faq-btn.open{color:#8805A4}
+
+.pbr-faq-icon{
+  font-size:22px;
+  color:#8805A4;
+  font-weight:300;
+  transition:transform 0.3s;
+}
+
+.pbr-faq-icon.open{transform:rotate(45deg)}
+
+.pbr-faq-body{
+  padding:0 24px 20px;
+  color:#475569;
+  line-height:1.8;
+  font-size:14px;
+}
+
+@media(max-width:767px){
+  .pbr-help-hero{padding:24px 20px;gap:24px}
+  .pbr-faq-section{padding:40px 20px}
+}

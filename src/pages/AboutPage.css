@@ -1,0 +1,92 @@
+/* === About Page Styles === */
+
+.pbr-about-hero{
+  background:linear-gradient(135deg,#F6F2FD 0%,#EDE0FF 100%);
+  padding:64px 80px;
+}
+
+.pbr-about-hero-title{
+  font-size:clamp(28px,4vw,48px);
+  font-weight:800;
+  background:linear-gradient(110deg,#621DA3 0%,#A038D0 100%);
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+  background-clip:text;
+}
+
+.pbr-mission-card{
+  background:linear-gradient(135deg,#661FA5 0%,#9E38CC 100%);
+  border-radius:24px;
+  padding:40px;
+  color:#fff;
+  height:100%;
+}
+
+.pbr-vision-card{
+  background:linear-gradient(122deg,#611DA2 0%,#A139CE 100%);
+  border-radius:24px;
+  padding:40px;
+  color:#fff;
+  height:100%;
+}
+
+.pbr-card-icon{
+  width:48px;
+  height:48px;
+  border-radius:50%;
+  background:#fff;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  flex-shrink:0;
+}
+
+.pbr-why-box{
+  background:#F6F2FD;
+  border-radius:20px;
+  padding:32px;
+  height:100%;
+}
+
+.pbr-check-circle{
+  width:32px;
+  height:32px;
+  border-radius:50%;
+  background:#fff;
+  border:2px solid #8805A4;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  flex-shrink:0;
+}
+
+.pbr-what-card{
+  background:#F8F4FF;
+  border-radius:16px;
+  padding:24px;
+  height:100%;
+  border:none;
+}
+
+.pbr-what-icon{
+  width:44px;
+  height:44px;
+  border-radius:10px;
+  background:rgba(147,51,234,0.10);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  margin-bottom:14px;
+}
+
+.pbr-sponsor-section{
+  background:linear-gradient(90deg,#611EA3 0%,#9E37CE 100%);
+  border-radius:20px;
+  margin:0 24px 32px;
+  padding:40px;
+}
+
+@media(max-width:767px){
+  .pbr-about-hero{padding:40px 24px}
+  .pbr-sponsor-section{margin:0 12px 24px;padding:28px 20px}
+}

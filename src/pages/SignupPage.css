@@ -1,0 +1,78 @@
+/* === Signup Page Styles === */
+
+/* Reuses auth layout - shared structure with Login */
+
+.pbr-signup-bg{
+  background:linear-gradient(180deg,rgba(158,47,205,0.95) 0%,rgba(88,17,157,0.95) 100%);
+  min-height:100vh;
+}
+
+.pbr-signup-left{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:48px;
+}
+
+.pbr-signup-img-wrap{
+  border-radius:14px;
+  border:1px solid rgba(255,255,255,0.4);
+  background:rgba(255,255,255,0.18);
+  backdrop-filter:blur(4px);
+  padding:12px;
+  display:inline-block;
+  margin-bottom:24px;
+}
+
+.pbr-signup-img-wrap img{
+  border-radius:10px;
+  max-width:260px;
+  width:100%;
+  display:block;
+}
+
+.pbr-signup-right{
+  background:rgba(0,0,0,0.12);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:32px;
+}
+
+.pbr-signup-card{
+  background:#fff;
+  border-radius:22px;
+  padding:40px;
+  width:100%;
+  max-width:500px;
+  box-shadow:0 24px 48px rgba(0,0,0,0.15);
+}
+
+.pbr-signup-card h2{
+  color:#0F172A;
+  font-weight:800;
+  text-align:center;
+  margin-bottom:6px;
+}
+
+.pbr-signup-btn{
+  background:#8C2BEE;
+  color:#fff;
+  border:none;
+  border-radius:9999px;
+  font-weight:700;
+  font-size:15px;
+  padding:11px 0;
+  width:100%;
+  cursor:pointer;
+  margin-top:8px;
+  transition:background 0.2s;
+}
+
+.pbr-signup-btn:hover{background:#7215d4}
+
+@media(max-width:991px){
+  .pbr-signup-left{padding:32px 24px}
+  .pbr-signup-right{padding:24px}
+  .pbr-signup-card{padding:28px}
+}

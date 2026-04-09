@@ -1,0 +1,93 @@
+/* === Factsheets Page Styles === */
+
+.pbr-factsheets-banner{
+  background:linear-gradient(92deg,#7024AD 1.25%,#9133C4 98.13%);
+  padding:56px 80px;
+  color:#fff;
+  text-align:center;
+}
+
+.pbr-factsheets-banner h1{
+  font-size:clamp(24px,4vw,44px);
+  font-weight:800;
+}
+
+.pbr-factsheet-card{
+  background:#fff;
+  border-radius:20px;
+  overflow:hidden;
+  box-shadow:0 2px 16px rgba(0,0,0,0.07);
+  display:flex;
+  flex-direction:column;
+  height:100%;
+  border:none;
+  transition:box-shadow 0.2s, transform 0.2s;
+}
+
+.pbr-factsheet-card:hover{
+  box-shadow:0 8px 32px rgba(136,5,164,0.15);
+  transform:translateY(-3px);
+}
+
+.pbr-factsheet-body{
+  padding:24px;
+  flex-grow:1;
+}
+
+.pbr-year-badge{
+  background:rgba(147,51,234,0.10);
+  color:#7124AD;
+  font-size:13px;
+  font-weight:700;
+  border-radius:9999px;
+  padding:4px 14px;
+  display:inline-block;
+  margin-bottom:14px;
+}
+
+.pbr-factsheet-title{
+  font-size:15px;
+  font-weight:700;
+  line-height:1.5;
+  color:#1C1B23;
+  margin-bottom:10px;
+}
+
+.pbr-factsheet-desc{
+  font-size:13px;
+  color:#64748B;
+  line-height:1.7;
+  margin-bottom:14px;
+}
+
+.pbr-tag{
+  background:#F1F5F9;
+  color:#64748B;
+  font-size:11px;
+  font-weight:500;
+  border-radius:9999px;
+  padding:3px 10px;
+}
+
+.pbr-download-btn{
+  background:linear-gradient(90deg,#611DA2 0%,#9333EA 100%);
+  color:#fff;
+  border:none;
+  border-radius:9999px;
+  font-weight:700;
+  font-size:14px;
+  padding:11px 0;
+  width:100%;
+  cursor:pointer;
+  transition:opacity 0.2s;
+}
+
+.pbr-download-btn:hover{opacity:0.88}
+
+.pbr-factsheet-footer{
+  padding:0 24px 24px;
+}
+
+@media(max-width:767px){
+  .pbr-factsheets-banner{padding:36px 24px}
+}

@@ -1,0 +1,106 @@
+/* === Home Page Styles === */
+
+.pbr-hero{
+  background:url("https://api.builder.io/api/v1/image/assets/TEMP/29102e3f0c1d8e1004ed99bf3d87cf8af48f7028?width=2880") center/cover no-repeat;
+  min-height:520px;
+  display:flex;
+  flex-direction:column;
+}
+
+.pbr-hero-content{
+  display:flex;
+  align-items:center;
+  padding:48px;
+  flex-grow:1;
+  gap:32px;
+  flex-wrap:wrap;
+}
+
+.pbr-hero-title{
+  font-size:clamp(28px,4vw,52px);
+  font-weight:800;
+  line-height:1.2;
+}
+
+.pbr-hero-text{
+  color:rgba(255,255,255,0.7);
+  line-height:2;
+  text-align:justify;
+  margin-bottom:28px;
+}
+
+.pbr-hero-img{
+  width:240px;
+  height:240px;
+  border-radius:50%;
+  overflow:hidden;
+  border:3px solid rgba(255,255,255,0.3);
+  flex-shrink:0;
+  margin-left:auto;
+}
+
+.pbr-hero-img img{width:100%;height:100%;object-fit:cover}
+
+.pbr-stats-bar{
+  background:linear-gradient(90deg,rgba(78,12,145,0.45) 0%,rgba(133,36,190,0.50) 100%);
+}
+
+.pbr-stat-icon{
+  width:80px;
+  height:80px;
+  border-radius:50%;
+  background:rgba(255,255,255,0.75);
+  box-shadow:0 15px 19px -4px rgba(0,0,0,0.10);
+  flex-shrink:0;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+.pbr-stat-label{
+  font-size:13px;
+  font-weight:700;
+  text-transform:uppercase;
+  letter-spacing:1.2px;
+  color:#fff;
+  margin-bottom:6px;
+}
+
+.pbr-stat-desc{
+  font-size:13px;
+  color:rgba(255,255,255,0.6);
+  line-height:1.7;
+  margin:0;
+}
+
+.pbr-about-shape{
+  background:linear-gradient(90deg,#530E95 0%,#8220BA 100%);
+  border-radius:16px;
+  min-height:200px;
+  font-size:clamp(24px,3vw,40px);
+  font-weight:800;
+  text-align:center;
+  text-transform:uppercase;
+  line-height:1.4;
+  padding:48px;
+  color:#fff;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+.pbr-methods-bg{
+  background:linear-gradient(180deg,rgba(73,11,146,0.90) 0%,#A02FCF 100%);
+}
+
+.pbr-methods-img{
+  border-radius:16px;
+  overflow:hidden;
+  border:6px solid #fff;
+  box-shadow:0 19px 38px -9px rgba(0,0,0,0.25);
+}
+
+@media(max-width:767px){
+  .pbr-hero-content{padding:28px 20px;}
+  .pbr-hero-img{width:160px;height:160px;}
+}
