@@ -1,55 +1,40 @@
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@700&display=swap");
-*{box-sizing:border-box}
-body{font-family:"Inter",sans-serif;background:#FAFAFA}
-:root{
---bs-primary:#9333EA;
---pbr-purple:#8805A4;
---pbr-grad:linear-gradient(180deg,rgba(78,13,150,0.90) 0%,#9F2FCD 100%);
---pbr-grad-h:linear-gradient(180deg,rgba(158,47,205,0.95) 0%,rgba(88,17,157,0.95) 100%);
---pbr-dark:#1C1B23;
---pbr-body:#474554;
-}
-.pbr-navbar-top{background:rgba(255,255,255,0.95);backdrop-filter:blur(6px);border-bottom:1px solid #F8FAFC}
-.pbr-navbar-title{color:#8805A4;font-size:clamp(13px,2vw,30px);font-weight:700;letter-spacing:-0.5px}
-.pbr-navbar-bottom{background:linear-gradient(90deg,rgba(255,255,255,0.40) 0%,rgba(153,153,153,0.40) 100%);min-height:52px}
-.pbr-nav-link{color:#475569!important;font-size:14px;font-weight:400;letter-spacing:0.3px;white-space:nowrap}
-.pbr-nav-link:hover,.pbr-nav-link.active{color:#9333EA!important;font-weight:600}
-.pbr-search{background:#F1F5F9;border-radius:9999px;border:none;outline:none;font-size:14px;color:#6B7280;padding:8px 14px}
-.btn-pbr{background:#9333EA;color:#fff;border:none;border-radius:9999px;font-size:13px;font-weight:700;letter-spacing:0.5px;text-transform:uppercase;padding:8px 20px}
-.btn-pbr:hover{background:#7e22ce;color:#fff}
-.pbr-footer{background:var(--pbr-grad);color:#fff;padding:48px 80px 0}
-.pbr-footer-bottom{border-top:1px solid rgba(255,255,255,0.10);padding:12px 0}
-.pbr-footer-link{color:rgba(255,255,255,0.95)!important;font-size:15px;line-height:2;display:block;transition:opacity 0.2s}
-.pbr-footer-link:hover{opacity:0.7}
-.pbr-hero-home{background:url("https://api.builder.io/api/v1/image/assets/TEMP/29102e3f0c1d8e1004ed99bf3d87cf8af48f7028?width=2880") center/cover no-repeat;min-height:480px;display:flex;flex-direction:column}
-.pbr-stats-bar{background:linear-gradient(90deg,rgba(78,12,145,0.45) 92%,rgba(133,36,190,0.50) 100%)}
-.pbr-stat-icon{width:80px;height:80px;border-radius:50%;background:rgba(255,255,255,0.75);box-shadow:0 15px 19px -4px rgba(0,0,0,0.10);flex-shrink:0}
-.pbr-about-arrow{flex-shrink:0;width:min(340px,38vw);height:320px}
-.pbr-grad-purple{background:linear-gradient(135deg,#661FA5 0%,#9E38CC 100%)}
-.pbr-grad-methods{background:linear-gradient(180deg,rgba(73,11,146,0.90) 0%,#A02FCF 100%)}
-.pbr-methods-img{border-radius:18px;border:6px solid #fff;overflow:hidden;box-shadow:0 19px 38px -9px rgba(0,0,0,0.25)}
-.pbr-init-shape{display:flex;align-items:center;justify-content:center;background:linear-gradient(0deg,rgba(83,14,149,0.90) 0%,#8220BA 100%);width:240px;color:#FDFAFF;font-size:clamp(14px,2vw,28px);font-weight:700;text-align:center;text-transform:uppercase;line-height:1.5;padding:32px;clip-path:polygon(12% 0,100% 0,100% 100%,12% 100%,0% 50%);flex-shrink:0}
-.pbr-mission{background:linear-gradient(135deg,#661FA5 0%,#9E38CC 100%);border-radius:26px;padding:36px;color:#fff}
-.pbr-vision{background:linear-gradient(122deg,#611DA2 0%,#A139CE 100%);border-radius:26px;padding:36px;color:#fff}
-.pbr-hero-banner{background:linear-gradient(92deg,#7024AD 1.25%,#9133C4 98.13%);padding:40px 64px;color:#fff}
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap");
+
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:"Inter",sans-serif;background:#FAFAFA;color:#1C1B23}
+a{text-decoration:none}
+
+.pbr-nav-link{font-size:13px;font-weight:500;color:#475569!important;border-bottom:3px solid transparent;transition:all 0.2s;white-space:nowrap}
+.pbr-nav-link:hover,.pbr-nav-link.active{color:#8805A4!important;font-weight:700;border-bottom-color:#8805A4}
+
+.pbr-hero{background:url("https://api.builder.io/api/v1/image/assets/TEMP/29102e3f0c1d8e1004ed99bf3d87cf8af48f7028?width=2880") center/cover no-repeat;min-height:520px;display:flex;flex-direction:column}
+.pbr-stats-bar{background:linear-gradient(90deg,rgba(78,12,145,0.45) 0%,rgba(133,36,190,0.50) 100%)}
+.pbr-stat-icon{width:80px;height:80px;border-radius:50%;background:rgba(255,255,255,0.75);box-shadow:0 15px 19px -4px rgba(0,0,0,0.10);flex-shrink:0;display:flex;align-items:center;justify-content:center}
+
+.pbr-banner{background:linear-gradient(92deg,#7024AD 1.25%,#9133C4 98.13%);padding:48px 64px;color:#fff;text-align:center}
+.pbr-banner-purple{background:linear-gradient(90deg,#6E23AB 0%,#9333C5 100%);padding:64px 80px;min-height:240px;display:flex;align-items:center}
+
+.pbr-mission-card{background:linear-gradient(135deg,#661FA5 0%,#9E38CC 100%);border-radius:24px;padding:40px;color:#fff}
+.pbr-vision-card{background:linear-gradient(122deg,#611DA2 0%,#A139CE 100%);border-radius:24px;padding:40px;color:#fff}
 .pbr-formula-card{background:rgba(245,241,255,0.70);border-radius:24px;padding:40px}
 .pbr-formula-box{background:#fff;border-radius:8px;padding:20px;text-align:center}
 .pbr-formula-num{color:#8805A4;font-size:18px;font-weight:700;padding-bottom:8px;border-bottom:2px solid #8805A4;display:block}
 .pbr-formula-den{color:#8805A4;font-size:18px;font-weight:700;padding-top:4px;display:block}
-.pbr-initiatives-hero{background:linear-gradient(90deg,#6E23AB 0%,#9333C5 100%);padding:64px 80px;min-height:240px;display:flex;align-items:center}
-.pbr-accordion-section{background:linear-gradient(180deg,#9233C5 0%,#6F24AC 100%);padding:64px 120px}
-.pbr-accordion-icon{width:48px;height:48px;border-radius:50%;background:rgba(106,90,224,0.10);display:flex;align-items:center;justify-content:center;flex-shrink:0}
-.pbr-help-hero{background:#F6F2FD;min-height:280px;display:flex;align-items:flex-end;padding:24px 80px 24px 120px}
-.pbr-faq-section{background:linear-gradient(180deg,#9003D2 0%,#6E23AB 100%);padding:48px 80px}
-.pbr-card-white{background:rgba(255,255,255,0.80);border-radius:22px}
-.pbr-auth-left{background:var(--pbr-grad-h);min-height:400px}
-.pbr-auth-img-wrap{border-radius:14px;border:1px solid #fff;background:rgba(255,255,255,0.50);backdrop-filter:blur(1.5px);padding:10px;display:inline-block}
+
+.pbr-auth-panel{background:linear-gradient(180deg,rgba(158,47,205,0.95) 0%,rgba(88,17,157,0.95) 100%);min-height:100vh}
+.pbr-auth-card{background:#fff;border-radius:22px;padding:40px;width:100%;max-width:480px}
+.pbr-auth-img-wrap{border-radius:14px;border:1px solid rgba(255,255,255,0.5);background:rgba(255,255,255,0.2);padding:10px;display:inline-block}
 .pbr-auth-img-wrap img{border-radius:9px;max-width:260px;width:100%}
-.pbr-viz-panel{background:rgba(255,255,255,0.40);border-radius:31px;padding:24px}
-.pbr-viz-select{border-radius:18px;border:1px solid #E2E8F0;background:#F8FAFC;padding:8px 14px;width:100%;font-size:13px;color:#6B7280;appearance:none}
-.pbr-table-wrap{background:#fff;border-radius:16px;box-shadow:0 0 0 1px rgba(200,196,214,0.10);overflow:hidden}
-.pbr-badge-purple{background:#513FC6;color:#fff;border-radius:50%;width:28px;height:28px;display:inline-flex;align-items:center;justify-content:center;font-size:10px;font-weight:600}
-.pbr-profile-card{background:linear-gradient(135deg,#661FA5 0%,#9E38CC 100%);border-radius:22px;padding:32px;color:#fff}
-.pbr-profile-avatar{width:100px;height:100px;border-radius:50%;border:3px solid rgba(255,255,255,0.4);object-fit:cover}
-@media(max-width:992px){.pbr-footer{padding:40px 24px 0}.pbr-accordion-section{padding:40px 24px}.pbr-initiatives-hero{padding:40px 24px}.pbr-help-hero{flex-direction:column;padding:24px}.pbr-faq-section{padding:32px 24px}.pbr-hero-banner{padding:32px 24px}}
-@media(max-width:768px){.pbr-navbar-title{font-size:12px}.pbr-init-shape{display:none}}
+
+.pbr-viz-bg{background:linear-gradient(180deg,rgba(158,47,205,0.95) 0%,rgba(88,17,157,0.95) 100%);min-height:90vh;padding:32px 24px}
+.pbr-viz-panel{background:rgba(255,255,255,0.95);border-radius:24px;padding:24px}
+.pbr-table-wrap{background:#fff;border-radius:16px;overflow:hidden;box-shadow:0 4px 24px rgba(0,0,0,0.08)}
+
+.pbr-footer{background:linear-gradient(180deg,rgba(78,13,150,0.90) 0%,#9F2FCD 100%);color:#fff;padding:48px 80px 0}
+.pbr-footer-link{color:rgba(255,255,255,0.85)!important;font-size:14px;line-height:2.2;display:block;transition:opacity 0.2s}
+.pbr-footer-link:hover{opacity:0.6}
+
+.pbr-help-hero{background:#F6F2FD;padding:32px 80px;display:flex;align-items:center;gap:48px;flex-wrap:wrap}
+.pbr-faq-bg{background:linear-gradient(180deg,#9003D2 0%,#6E23AB 100%);padding:56px 80px}
+
+@media(max-width:767px){.pbr-banner{padding:32px 24px}.pbr-banner-purple{padding:32px 24px}.pbr-footer{padding:40px 24px 0}.pbr-help-hero{padding:24px}.pbr-faq-bg{padding:40px 24px}}

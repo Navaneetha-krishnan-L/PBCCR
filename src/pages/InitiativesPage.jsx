@@ -1,15 +1,80 @@
-import{useState}from 'react'
+import { useState } from 'react'
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
-const IT=[{id:1,t:'Cancer Institute (WIA)',d:'As a pioneer in cancer registries since 2012, the Cancer Institute (WIA) serves as the primary technical partner for PBCCR.',l:['Technical coordination of state-wide registries','Training for healthcare professionals'],img:'https://api.builder.io/api/v1/image/assets/TEMP/b75efdad4a4561838f9072a4fed41dccef97e885?width=944'},{id:2,t:'DPH & PM',d:'The Directorate of Public Health and Preventive Medicine coordinates public health programs and disease surveillance across Tamil Nadu.',l:[],img:null},{id:3,t:'Directorate of Medical Education (DME)',d:'The DME oversees medical education across Tamil Nadu government institutions, providing the academic backbone that supports PBCCR capabilities.',l:[],img:null}]
-export default function InitiativesPage(){
-const[open,setOpen]=useState(1)
-return(
-<>
-<Navbar />
-<section className='pbr-initiatives-hero'><div><h1 className='fw-bolder mb-3 text-white' style={{fontSize:'clamp(32px,5vw,60px)',letterSpacing:-1.5}}>Our Initiatives</h1><p className='text-white-50' style={{maxWidth:680,lineHeight:1.6}}>Key organizations supporting cancer data collection and healthcare improvement across the region.</p></div></section>
-<section className='pbr-accordion-section'><div className='d-flex flex-column gap-4'>{IT.map(item=>(<div className='bg-white rounded-4 overflow-hidden' style={{boxShadow:'0 20px 40px rgba(28,27,35,0.06)'}} key={item.id}><button className='d-flex w-100 align-items-center justify-content-between p-4 bg-white border-0 text-start' onClick={()=>setOpen(open===item.id?null:item.id)}><div className='d-flex align-items-center gap-3'><div className='pbr-accordion-icon'><svg width='20' height='20' viewBox='0 0 20 20' fill='none'><circle cx='10' cy='10' r='9' stroke='#8805A4' strokeWidth='2'/></svg></div><h5 className='fw-bold mb-0'>{item.t}</h5></div><svg width='12' height='8' viewBox='0 0 12 8' fill='none' style={{transform:open===item.id?'rotate(180deg)':'none',transition:'transform 0.3s'}}><path d='M6 7.4L0 1.4L1.4 0L6 4.6L10.6 0L12 1.4L6 7.4Z' fill='#787585'/></svg></button>{open===item.id&&(<div className='p-4'><div className={item.img?'row g-4':''}><div className={item.img?'col-md-6':'col-12'}><p className='text-secondary' style={{lineHeight:1.8}}>{item.d}</p>{item.l.length>0&&(<ul className='list-unstyled'>{item.l.map(li=>(<li key={li} className='d-flex align-items-center gap-2 mb-2 text-secondary'><svg width='14' height='14' viewBox='0 0 14 14' fill='none'><circle cx='7' cy='7' r='6' stroke='#513FC6' strokeWidth='1.5'/><path d='M4 7l2 2 4-4' stroke='#513FC6' strokeWidth='1.5' strokeLinecap='round'/></svg>{li}</li>))}</ul>)}</div>{item.img&&(<div className='col-md-6'><div className='rounded-4 overflow-hidden' style={{height:240}}><img src={item.img} alt={item.t} className='w-100 h-100' style={{objectFit:'cover'}} /></div></div>)}</div></div>)}</div>))}</div></section>
-<Footer />
-</>
-)
+
+const ORGS = [
+  {
+    id: 1,
+    title: 'Cancer Institute (WIA)',
+    desc: 'As a pioneer in cancer registries since 2012, the Cancer Institute (WIA) serves as the primary technical partner for PBCCR.',
+    points: ['Technical coordination of state-wide registries','Training for healthcare professionals','Quality control and data validation','Research collaboration and publication support'],
+    img: 'https://api.builder.io/api/v1/image/assets/TEMP/2f22bfd862f8da157003dd58da1beb20fc540ff1?width=176',
+  },
+  {
+    id: 2,
+    title: 'Directorate of Public Health and Preventive Medicine (DPH and PM)',
+    desc: 'DPH and PM oversees the public health infrastructure and supports PBCCR through government health data and district-level implementation.',
+    points: ['Government health policy integration','District-level cancer surveillance','Public health data coordination','Resource allocation and support'],
+    img: 'https://api.builder.io/api/v1/image/assets/TEMP/2f22bfd862f8da157003dd58da1beb20fc540ff1?width=176',
+  },
+  {
+    id: 3,
+    title: 'Directorate of Medical Education (DME)',
+    desc: 'DME facilitates data collection from medical college hospitals and training institutions across Tamil Nadu.',
+    points: ['Medical college hospital data integration','Academic research collaboration','Clinical training programs','Standardized reporting protocols'],
+    img: 'https://api.builder.io/api/v1/image/assets/TEMP/2f22bfd862f8da157003dd58da1beb20fc540ff1?width=176',
+  },
+]
+
+export default function InitiativesPage() {
+  const [open, setOpen] = useState(1)
+  return (
+    <>
+      <Navbar />
+
+      {/* Hero */}
+      <section className="pbr-banner-purple">
+        <div>
+          <h1 className="fw-bold text-white mb-3" style={{ fontSize: 'clamp(28px,5vw,56px)', letterSpacing: -1 }}>Our Initiatives</h1>
+          <p className="text-white-50" style={{ maxWidth: 600, lineHeight: 1.7 }}>Key organizations supporting cancer data collection, analysis, and healthcare improvement across Tamil Nadu.</p>
+        </div>
+      </section>
+
+      {/* Accordion */}
+      <section className="py-5" style={{ background: 'linear-gradient(180deg,#9233C5 0%,#6F24AC 100%)' }}>
+        <div className="container" style={{ maxWidth: 860 }}>
+          <div className="d-flex flex-column gap-3">
+            {ORGS.map((org) => (
+              <div key={org.id} className="bg-white rounded-4 overflow-hidden shadow-sm">
+                <button
+                  className="w-100 p-4 d-flex justify-content-between align-items-center border-0 bg-transparent fw-bold text-start"
+                  style={{ color: open === org.id ? '#8805A4' : '#1C1B23', fontSize: 17 }}
+                  onClick={() => setOpen(open === org.id ? 0 : org.id)}
+                >
+                  <span>{org.title}</span>
+                  <span style={{ fontSize: 22, transition: 'transform 0.3s', transform: open === org.id ? 'rotate(45deg)' : 'none', color: '#8805A4' }}>+</span>
+                </button>
+                {open === org.id && (
+                  <div className="px-4 pb-4">
+                    <hr className="mt-0 mb-3" />
+                    <p className="text-secondary mb-3" style={{ lineHeight: 1.8 }}>{org.desc}</p>
+                    <ul className="list-unstyled mb-0">
+                      {org.points.map((pt, i) => (
+                        <li key={i} className="d-flex align-items-start gap-2 mb-2">
+                          <span style={{ color: '#8805A4', fontWeight: 700, fontSize: 18, lineHeight: 1.2 }}>&#8226;</span>
+                          <span className="text-secondary" style={{ lineHeight: 1.7 }}>{pt}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <Footer />
+    </>
+  )
 }
